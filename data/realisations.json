@@ -1,0 +1,11 @@
+[
+  { "id": "r1", "image": "/1.jpg", "product": "Sweat à capuche Joker", "client": "Commande client", "date": "2025", "cat": "tshirts" },
+  { "id": "r2", "image": "/2.jpg", "product": "Coussin léopard", "client": "Commande client", "date": "2025", "cat": "coussins" },
+  { "id": "r3", "image": "/3.jpg", "product": "Pochette brodée Chanel", "client": "Commande client", "date": "2025", "cat": "accessoires" },
+  { "id": "r4", "image": "/4.jpg", "product": "Set de coussins déco", "client": "Commande client", "date": "2025", "cat": "coussins" },
+  { "id": "r5", "image": "/5.jpg", "product": "Pochette brodée nœud", "client": "Commande client", "date": "2025", "cat": "accessoires" },
+  { "id": "r6", "image": "/6.jpg", "product": "Casquettes brodées", "client": "Commande client", "date": "2025", "cat": "accessoires" },
+  { "id": "r7", "image": "/7.jpg", "product": "Sweat papillons", "client": "Commande client", "date": "2025", "cat": "tshirts" },
+  { "id": "r8", "image": "/8.jpg", "product": "Pochette lunettes personnalisée", "client": "Commande client", "date": "2025", "cat": "accessoires" },
+  { "id": "r9", "image": "/9.jpg", "product": "Verres dégradé couleurs", "client": "Commande client", "date": "2025", "cat": "verres" }
+]

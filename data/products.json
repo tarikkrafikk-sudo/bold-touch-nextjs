@@ -1,0 +1,606 @@
+[
+  {
+    "id": "mug-ceramique-blanc",
+    "cat": "mugs",
+    "price": 149,
+    "compareAt": null,
+    "image": "/assets/gallery/mug-rose-personnalise.jpg",
+    "colors": [
+      "Blanc",
+      "Noir",
+      "Sable",
+      "Terracotta",
+      "Ivoire"
+    ],
+    "sizes": null,
+    "badge": "bestseller",
+    "rating": 4.8,
+    "reviews": 126,
+    "name": {
+      "fr": "Mug Céramique Mat",
+      "en": "Matte Ceramic Mug",
+      "ar": "كوب سيراميك مطفي"
+    },
+    "desc": {
+      "fr": "Mug en céramique épaisse, émail mat, 330 ml. Votre texte ou image imprimés en haute définition, résistant au lave-vaisselle.",
+      "en": "Thick ceramic mug, matte glaze, 330 ml. Your text or image printed in high definition, dishwasher-safe.",
+      "ar": "كوب سيراميك سميك بطلاء مطفي، سعة 330 مل. طباعة نصك أو صورتك بجودة عالية، مقاوم لغسالة الصحون."
+    }
+  },
+  {
+    "id": "mug-noir-mat",
+    "cat": "mugs",
+    "price": 169,
+    "compareAt": 189,
+    "image": "/assets/gallery/mug-rose-personnalise.jpg",
+    "colors": [
+      "Noir",
+      "Anthracite",
+      "Terracotta",
+      "Sable"
+    ],
+    "sizes": null,
+    "badge": "new",
+    "rating": 4.7,
+    "reviews": 54,
+    "name": {
+      "fr": "Mug Noir Intense",
+      "en": "Deep Black Mug",
+      "ar": "كوب أسود داكن"
+    },
+    "desc": {
+      "fr": "Notre mug signature en noir profond : le contraste idéal pour les logos dorés et motifs amazighs.",
+      "en": "Our signature deep black mug: the ideal contrast for golden logos and Amazigh patterns.",
+      "ar": "كوبنا المميز باللون الأسود الداكن: التباين المثالي للشعارات الذهبية والزخارف الأمازيغية."
+    }
+  },
+  {
+    "id": "verre-the-grave",
+    "cat": "verres",
+    "price": 89,
+    "compareAt": null,
+    "image": "/assets/gallery/verres-degrade-arcenciel.jpg",
+    "colors": [
+      "Transparent",
+      "Orange",
+      "Rose",
+      "Vert",
+      "Bleu"
+    ],
+    "sizes": null,
+    "badge": null,
+    "rating": 4.9,
+    "reviews": 201,
+    "name": {
+      "fr": "Verre à Thé Gravé",
+      "en": "Engraved Tea Glass",
+      "ar": "كأس شاي محفور"
+    },
+    "desc": {
+      "fr": "Verre traditionnel marocain, gravure ou décor personnalisé au feu, pour sublimer le thé à la menthe.",
+      "en": "Traditional Moroccan glass, personalised fire-engraved decor, perfect for mint tea.",
+      "ar": "كأس مغربي تقليدي، نقش أو زخرفة مخصصة بالنار، لتزيين أتاي بالنعناع."
+    }
+  },
+  {
+    "id": "verre-long-drink",
+    "cat": "verres",
+    "price": 99,
+    "compareAt": null,
+    "image": "/assets/gallery/verres-degrade-arcenciel.jpg",
+    "colors": [
+      "Transparent",
+      "Orange",
+      "Rose",
+      "Jaune",
+      "Vert",
+      "Bleu"
+    ],
+    "sizes": null,
+    "badge": "new",
+    "rating": 4.6,
+    "reviews": 38,
+    "name": {
+      "fr": "Verre Long Drink",
+      "en": "Long Drink Glass",
+      "ar": "كأس لونغ دريك"
+    },
+    "desc": {
+      "fr": "Verre long drink 350 ml, parfait pour un cadeau d'été personnalisé à un prénom ou un message.",
+      "en": "350 ml long drink glass, perfect as a summer gift personalised with a name or message.",
+      "ar": "كأس لونغ دريك سعة 350 مل، هدية صيفية مثالية مخصصة باسم أو رسالة."
+    }
+  },
+  {
+    "id": "tshirt-bio-blanc",
+    "cat": "tshirts",
+    "price": 219,
+    "compareAt": null,
+    "image": "/assets/gallery/hoodie-papillon-blanc.jpg",
+    "colors": [
+      "Blanc",
+      "Sable",
+      "Ivoire",
+      "Rose"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "badge": "bestseller",
+    "rating": 4.8,
+    "reviews": 174,
+    "name": {
+      "fr": "T-shirt Coton Bio Blanc",
+      "en": "White Organic Cotton T-shirt",
+      "ar": "تيشيرت قطن عضوي أبيض"
+    },
+    "desc": {
+      "fr": "Coton biologique 180g, coupe unisexe. Impression DTF grand format, tenue longue durée.",
+      "en": "180g organic cotton, unisex fit. Large-format DTF print, long-lasting finish.",
+      "ar": "قطن عضوي 180غ، قصة للجنسين. طباعة DTF كبيرة الحجم، متانة طويلة الأمد."
+    }
+  },
+  {
+    "id": "tshirt-bio-noir",
+    "cat": "tshirts",
+    "price": 219,
+    "compareAt": 249,
+    "image": "/assets/gallery/hoodie-papillon-blanc.jpg",
+    "colors": [
+      "Noir",
+      "Anthracite",
+      "Marron",
+      "Violet"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "badge": null,
+    "rating": 4.7,
+    "reviews": 91,
+    "name": {
+      "fr": "T-shirt Coton Bio Noir",
+      "en": "Black Organic Cotton T-shirt",
+      "ar": "تيشيرت قطن عضوي أسود"
+    },
+    "desc": {
+      "fr": "Même qualité premium que notre blanc iconique, en noir profond pour un rendu plus contrasté.",
+      "en": "Same premium quality as our iconic white, in deep black for a more contrasted look.",
+      "ar": "نفس الجودة الفاخرة لنسختنا البيضاء المميزة، باللون الأسود الداكن لمظهر أكثر تبايناً."
+    }
+  },
+  {
+    "id": "coussin-berbere",
+    "cat": "coussins",
+    "price": 259,
+    "compareAt": null,
+    "image": "/assets/gallery/coussin-leopard.jpg",
+    "colors": [
+      "Ivoire",
+      "Terracotta",
+      "Sable",
+      "Naturel"
+    ],
+    "sizes": null,
+    "badge": "bestseller",
+    "rating": 4.9,
+    "reviews": 142,
+    "name": {
+      "fr": "Coussin Berbère 45×45",
+      "en": "Berber Cushion 45×45",
+      "ar": "وسادة أمازيغية 45×45"
+    },
+    "desc": {
+      "fr": "Housse en coton épais à passepoil, 45×45 cm, garnissage inclus. Votre photo ou motif imprimés recto.",
+      "en": "Thick cotton piped cover, 45×45 cm, filling included. Your photo or pattern printed on the front.",
+      "ar": "غطاء قطني سميك بحافة مزخرفة، 45×45 سم، يشمل الحشوة. طباعة صورتك أو زخرفتك على الوجه."
+    }
+  },
+  {
+    "id": "coussin-velours",
+    "cat": "coussins",
+    "price": 239,
+    "compareAt": null,
+    "image": "/assets/gallery/coussin-plume-noir.jpg",
+    "colors": [
+      "Anthracite",
+      "Terracotta",
+      "Noir",
+      "Marron"
+    ],
+    "sizes": null,
+    "badge": "new",
+    "rating": 4.6,
+    "reviews": 29,
+    "name": {
+      "fr": "Coussin Velours 40×40",
+      "en": "Velvet Cushion 40×40",
+      "ar": "وسادة مخملية 40×40"
+    },
+    "desc": {
+      "fr": "Toucher velours doux, finition passepoil contrastée. Idéal pour un intérieur chaleureux et personnel.",
+      "en": "Soft velvet touch, contrasting piped finish. Ideal for a warm, personal interior.",
+      "ar": "ملمس مخملي ناعم، تشطيب بحافة متباينة. مثالية لديكور داخلي دافئ وشخصي."
+    }
+  },
+  {
+    "id": "tote-bag",
+    "cat": "accessoires",
+    "price": 179,
+    "compareAt": null,
+    "image": "/assets/gallery/tote-hibou-set.jpg",
+    "colors": [
+      "Naturel",
+      "Noir",
+      "Sable"
+    ],
+    "sizes": null,
+    "badge": "bestseller",
+    "rating": 4.7,
+    "reviews": 88,
+    "name": {
+      "fr": "Tote Bag Toile Épaisse",
+      "en": "Heavy Canvas Tote Bag",
+      "ar": "حقيبة توت قماشية سميكة"
+    },
+    "desc": {
+      "fr": "Toile 320g résistante, anses renforcées. Impression grand format recto, votre design en couleurs vives.",
+      "en": "Sturdy 320g canvas, reinforced handles. Large front print, your design in vivid colours.",
+      "ar": "قماش متين 320غ، مقابض معززة. طباعة أمامية كبيرة، تصميمك بألوان زاهية."
+    }
+  },
+  {
+    "id": "coffret-duo",
+    "cat": "accessoires",
+    "price": 379,
+    "compareAt": 429,
+    "image": "/assets/gallery/mug-oeil-arcenciel.jpg",
+    "colors": [
+      "Blanc",
+      "Ivoire",
+      "Sable"
+    ],
+    "sizes": null,
+    "badge": "gift",
+    "rating": 5,
+    "reviews": 22,
+    "name": {
+      "fr": "Coffret Duo Mug + Coussin",
+      "en": "Mug + Cushion Gift Set",
+      "ar": "طقم هدية كوب ووسادة"
+    },
+    "desc": {
+      "fr": "Le mug et le coussin assortis, personnalisés au même motif, livrés dans un coffret cadeau Bold Touch.",
+      "en": "Matching mug and cushion, personalised with the same design, delivered in a Bold Touch gift box.",
+      "ar": "كوب ووسادة متناسقان، مخصصان بنفس التصميم، يُسلّمان في علبة هدايا Bold Touch."
+    }
+  },
+  {
+    "id": "pochette-brodee",
+    "cat": "accessoires",
+    "price": 149,
+    "compareAt": null,
+    "image": "/assets/gallery/pochette-lunettes-nadia.jpg",
+    "colors": [
+      "Ivoire",
+      "Terracotta",
+      "Sable"
+    ],
+    "sizes": null,
+    "badge": "new",
+    "rating": 4.9,
+    "reviews": 0,
+    "name": {
+      "fr": "Pochette Brodée Personnalisée",
+      "en": "Personalised Embroidered Pouch",
+      "ar": "محفظة مطرزة مخصصة"
+    },
+    "desc": {
+      "fr": "Pochette en tissu brodée à la main avec votre prénom ou un petit message, parfaite pour lunettes ou petits accessoires.",
+      "en": "Fabric pouch hand-embroidered with your first name or a short message, perfect for glasses or small accessories.",
+      "ar": "محفظة قماشية مطرزة يدوياً باسمك أو برسالة قصيرة، مثالية للنظارات أو الإكسسوارات الصغيرة."
+    }
+  },
+  {
+    "id": "mug-oeil-arcenciel",
+    "cat": "mugs",
+    "price": 159,
+    "compareAt": null,
+    "image": "/assets/gallery/mug-oeil-arcenciel.jpg",
+    "colors": [
+      "Blanc",
+      "Sable",
+      "Noir"
+    ],
+    "sizes": null,
+    "badge": "new",
+    "rating": 5,
+    "reviews": 0,
+    "name": {
+      "fr": "Mug Illustration Œil Arc-en-ciel",
+      "en": "Rainbow Eye Illustration Mug",
+      "ar": "كوب برسم عين قوس قزح"
+    },
+    "desc": {
+      "fr": "Mug en céramique blanche, impression grand format d'une illustration œil arc-en-ciel fleurie et papillons.",
+      "en": "White ceramic mug with a large-format print of a floral rainbow-eye illustration and butterflies.",
+      "ar": "كوب سيراميك أبيض بطباعة كبيرة لرسم عين بألوان قوس قزح مع زهور وفراشات."
+    }
+  },
+  {
+    "id": "tote-hibou-set",
+    "cat": "accessoires",
+    "price": 229,
+    "compareAt": null,
+    "image": "/assets/gallery/tote-hibou-set.jpg",
+    "colors": [
+      "Naturel",
+      "Ivoire"
+    ],
+    "sizes": null,
+    "badge": "bestseller",
+    "rating": 5,
+    "reviews": 0,
+    "name": {
+      "fr": "Set Tote Bag + Pochette + Étui \"Hibou\"",
+      "en": "\"Owl\" Tote Bag + Pouch + Case Set",
+      "ar": "طقم حقيبة توت + محفظة + غلاف \"البومة\""
+    },
+    "desc": {
+      "fr": "Ensemble assorti en toile naturelle : grand tote bag, pochette à fermeture éclair et étui, illustrés d'un hibou peint à la main.",
+      "en": "Matching natural canvas set: large tote bag, zip pouch and case, all hand-painted with an owl illustration.",
+      "ar": "طقم متناسق من القماش الطبيعي: حقيبة توت كبيرة، محفظة بسحاب وغلاف، جميعها مزينة برسم بومة مرسوم يدوياً."
+    }
+  },
+  {
+    "id": "coussin-leopard",
+    "cat": "coussins",
+    "price": 269,
+    "compareAt": null,
+    "image": "/assets/gallery/coussin-leopard.jpg",
+    "colors": [
+      "Sable",
+      "Terracotta",
+      "Ivoire"
+    ],
+    "sizes": null,
+    "badge": "new",
+    "rating": 5,
+    "reviews": 0,
+    "name": {
+      "fr": "Coussin Satin \"Léopard\"",
+      "en": "\"Leopard\" Satin Cushion",
+      "ar": "وسادة ساتان \"ليوبارد\""
+    },
+    "desc": {
+      "fr": "Housse satinée doré sable, impression portrait de léopard et motif tacheté. Un coussin signature pour un intérieur affirmé.",
+      "en": "Sand-gold satin cover, leopard portrait print with spotted pattern. A signature cushion for a bold interior.",
+      "ar": "غطاء ساتان بلون ذهبي رملي، مطبوع بصورة نمر مرقط. وسادة مميزة لديكور جريء."
+    }
+  },
+  {
+    "id": "tote-papillons-bleus",
+    "cat": "accessoires",
+    "price": 169,
+    "compareAt": null,
+    "image": "/assets/gallery/tote-papillons-bleus.jpg",
+    "colors": [
+      "Naturel",
+      "Blanc"
+    ],
+    "sizes": null,
+    "badge": null,
+    "rating": 5,
+    "reviews": 0,
+    "name": {
+      "fr": "Tote Bag \"Envol de Papillons Bleus\"",
+      "en": "\"Blue Butterflies\" Tote Bag",
+      "ar": "حقيبة توت \"فراشات زرقاء\""
+    },
+    "desc": {
+      "fr": "Toile naturelle peinte à la main, envolée de papillons bleus en dégradé. Pièce unique et délicate.",
+      "en": "Hand-painted natural canvas, a flight of blue butterflies in gradient. A unique and delicate piece.",
+      "ar": "قماش طبيعي مرسوم يدوياً، بفراشات زرقاء متدرجة. قطعة فريدة وأنيقة."
+    }
+  },
+  {
+    "id": "coussin-love-ailes",
+    "cat": "coussins",
+    "price": 249,
+    "compareAt": null,
+    "image": "/assets/gallery/coussin-love-ailes.jpg",
+    "colors": [
+      "Blanc",
+      "Ivoire"
+    ],
+    "sizes": null,
+    "badge": "gift",
+    "rating": 5,
+    "reviews": 0,
+    "name": {
+      "fr": "Coussin \"LOVE\" Cœurs Ailés",
+      "en": "\"LOVE\" Winged Hearts Cushion",
+      "ar": "وسادة \"LOVE\" بقلوب مجنحة"
+    },
+    "desc": {
+      "fr": "Housse blanche imprimée d'un cœur composé de petits cœurs rouges et du mot « LOVE » ailé.",
+      "en": "White cover printed with a heart made of small red hearts and the winged word \"LOVE\".",
+      "ar": "غطاء أبيض مطبوع بقلب مكوّن من قلوب حمراء صغيرة وكلمة \"LOVE\" المجنحة."
+    }
+  },
+  {
+    "id": "tote-noeud-noir",
+    "cat": "accessoires",
+    "price": 179,
+    "compareAt": null,
+    "image": "/assets/gallery/tote-noeud-noir.jpg",
+    "colors": [
+      "Noir",
+      "Anthracite"
+    ],
+    "sizes": null,
+    "badge": "new",
+    "rating": 5,
+    "reviews": 0,
+    "name": {
+      "fr": "Tote Bag Noir \"Nœud Élégant\"",
+      "en": "Black \"Elegant Bow\" Tote Bag",
+      "ar": "حقيبة توت سوداء \"فيونكة أنيقة\""
+    },
+    "desc": {
+      "fr": "Toile noire épaisse, illustration fine d'un nœud de ruban scintillant. Un accessoire chic au style épuré.",
+      "en": "Thick black canvas, delicate illustration of a sparkling ribbon bow. A chic accessory with a clean style.",
+      "ar": "قماش أسود سميك، برسم رفيع لفيونكة ريبون لامعة. إكسسوار أنيق بأسلوب بسيط."
+    }
+  },
+  {
+    "id": "coussin-fleur-aquarelle",
+    "cat": "coussins",
+    "price": 259,
+    "compareAt": null,
+    "image": "/assets/gallery/coussin-fleur-aquarelle.jpg",
+    "colors": [
+      "Mauve",
+      "Terracotta",
+      "Rose"
+    ],
+    "sizes": null,
+    "badge": "new",
+    "rating": 5,
+    "reviews": 0,
+    "name": {
+      "fr": "Coussin Satin \"Fleur Aquarelle\"",
+      "en": "\"Watercolour Flower\" Satin Cushion",
+      "ar": "وسادة ساتان \"زهرة مائية\""
+    },
+    "desc": {
+      "fr": "Housse satinée mauve, impression d'une fleur façon aquarelle peinte à la main. Douceur et délicatesse pour un salon cosy.",
+      "en": "Mauve satin cover, hand-painted watercolour-style flower print. Soft and delicate, perfect for a cosy living room.",
+      "ar": "غطاء ساتان بلون أرجواني فاتح، مطبوع بزهرة بأسلوب الألوان المائية المرسومة يدوياً. لمسة رقيقة لديكور دافئ."
+    }
+  },
+  {
+    "id": "verres-degrade-arcenciel",
+    "cat": "verres",
+    "price": 349,
+    "compareAt": 399,
+    "image": "/assets/gallery/verres-degrade-arcenciel.jpg",
+    "colors": [
+      "Dégradé",
+      "Orange",
+      "Rose",
+      "Fuchsia",
+      "Vert",
+      "Jaune",
+      "Bleu"
+    ],
+    "sizes": null,
+    "badge": "bestseller",
+    "rating": 5,
+    "reviews": 0,
+    "name": {
+      "fr": "Set de 7 Verres Dépolis Dégradé",
+      "en": "Set of 7 Frosted Ombré Glasses",
+      "ar": "طقم 7 أكواب مصنفرة متدرجة الألوان"
+    },
+    "desc": {
+      "fr": "Coffret de 7 verres dépolis, chacun dans un dégradé de couleur différent. Personnalisables avec un prénom gravé.",
+      "en": "Set of 7 frosted glasses, each in a different colour ombré. Personalisable with an engraved or printed first name.",
+      "ar": "طقم من 7 أكواب مصنفرة، كل واحد بتدرج لوني مختلف. قابل للتخصيص بنقش أو طباعة اسم."
+    }
+  },
+  {
+    "id": "coussin-ramadan",
+    "cat": "coussins",
+    "price": 229,
+    "compareAt": null,
+    "image": "/assets/gallery/coussin-ramadan.jpg",
+    "colors": [
+      "Blanc",
+      "Ivoire",
+      "Sable"
+    ],
+    "sizes": null,
+    "badge": "new",
+    "rating": 5,
+    "reviews": 0,
+    "name": {
+      "fr": "Coussin \"Ramadan\" Croissant Fleuri",
+      "en": "\"Ramadan\" Floral Crescent Cushion",
+      "ar": "وسادة \"رمضان يجمعنا\" بالهلال والورود"
+    },
+    "desc": {
+      "fr": "Housse blanche imprimée d'un croissant de lune fleuri, de lanternes et de calligraphie « رمضان يجمعنا ».",
+      "en": "White cover printed with a floral crescent moon, lanterns and the calligraphy \"Ramadan unites us\".",
+      "ar": "غطاء أبيض مطبوع بهلال مزين بالورود وفوانيس وخط \"رمضان يجمعنا\"."
+    }
+  },
+  {
+    "id": "hoodie-papillon-blanc",
+    "cat": "tshirts",
+    "price": 299,
+    "compareAt": null,
+    "image": "/assets/gallery/hoodie-papillon-blanc.jpg",
+    "colors": [
+      "Blanc",
+      "Sable",
+      "Noir",
+      "Anthracite",
+      "Rose"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "badge": "new",
+    "rating": 5,
+    "reviews": 0,
+    "name": {
+      "fr": "Hoodie Blanc \"Papillons\"",
+      "en": "White \"Butterflies\" Hoodie",
+      "ar": "هودي أبيض \"فراشات\""
+    },
+    "desc": {
+      "fr": "Sweat à capuche épais, imprimé de deux papillons noirs délicats. Confortable et chic, personnalisable avec votre propre motif.",
+      "en": "Thick hoodie, printed with two delicate black butterflies. Comfortable and chic, personalisable with your own design.",
+      "ar": "سترة بقلنسوة سميكة، مطبوعة بفراشتين سوداوين أنيقتين. مريحة وعصرية، قابلة للتخصيص بتصميمك الخاص."
+    }
+  },
+  {
+    "id": "casquettes-duo",
+    "cat": "accessoires",
+    "price": 159,
+    "compareAt": null,
+    "image": "/assets/gallery/casquettes-duo.jpg",
+    "colors": [
+      "Blanc",
+      "Marron",
+      "Noir",
+      "Sable"
+    ],
+    "sizes": null,
+    "badge": "new",
+    "rating": 5,
+    "reviews": 0,
+    "name": {
+      "fr": "Casquette Brodée Personnalisée",
+      "en": "Personalised Embroidered Cap",
+      "ar": "قبعة مطرزة مخصصة"
+    },
+    "desc": {
+      "fr": "Casquette en coton, petite broderie ou impression au choix (palmier, papillon, initiale…). Disponible en blanc ou marron.",
+      "en": "Cotton cap with a small embroidery or print of your choice (palm tree, butterfly, initial…). Available in white or brown.",
+      "ar": "قبعة قطنية بتطريز أو طباعة صغيرة حسب اختيارك (نخلة، فراشة، حرف أول...). متوفرة باللونين الأبيض والبني."
+    }
+  }
+]

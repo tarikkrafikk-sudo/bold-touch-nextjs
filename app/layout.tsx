@@ -10,6 +10,24 @@ export const metadata: Metadata = {
   title: "BOLD TOUCH — Atelier de Personnalisation",
   description:
     "Mugs, verres, t-shirts, coussins et accessoires personnalisés, fabriqués à la commande au Maroc. BOLD TOUCH, votre touche audacieuse.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+};
+
+// Organization structured data so Google can show the BOLD TOUCH logo next
+// to search results and in the Knowledge Panel.
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "BOLD TOUCH",
+  url: "https://bold-touch.com",
+  logo: "https://bold-touch.com/logo.png",
+  sameAs: [
+    "https://www.instagram.com/bold_touch05_37/",
+    "https://www.tiktok.com/@bold.touch8",
+  ],
 };
 
 export default function RootLayout({
@@ -37,6 +55,10 @@ export default function RootLayout({
         <link
           href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
       <body className="font-grotesk bg-cream text-ink antialiased">

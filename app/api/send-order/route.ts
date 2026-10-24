@@ -2,7 +2,11 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
-const ORDER_EMAIL = "rafikk.tarikk@gmail.com";
+// Reads the "OWNER_EMAIL" environment variable on Vercel so the owner can
+// change the notification address from Settings → Environment Variables
+// without editing code. Falls back to the current address if that variable
+// isn't set.
+const ORDER_EMAIL = process.env.OWNER_EMAIL || "tarikk.rafikk@gmail.com";
 
 interface OrderPhoto {
   id?: string;

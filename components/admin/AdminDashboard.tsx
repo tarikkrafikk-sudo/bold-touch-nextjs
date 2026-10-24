@@ -38,6 +38,10 @@ export default function AdminDashboard({
   const [realisationSubmitting, setRealisationSubmitting] = useState(false);
   const [realisationError, setRealisationError] = useState("");
   const [realisationPreview, setRealisationPreview] = useState<string | null>(null);
+  const [editingRealisation, setEditingRealisation] = useState<Realisation | null>(null);
+  const [editRealisationPreview, setEditRealisationPreview] = useState<string | null>(null);
+  const [editRealisationSubmitting, setEditRealisationSubmitting] = useState(false);
+  const [editRealisationError, setEditRealisationError] = useState("");
 
   const productCats = Object.entries(categoryLabelsFr);
 
@@ -110,6 +114,38 @@ export default function AdminDashboard({
       if (res.ok) setRealisations(data.realisations);
     } catch {
       setRealisationError("Impossible de supprimer cette réalisation pour le moment.");
+    }
+  }
+
+  function openEditRealisation(r: Realisation) {
+    setEditingRealisation(r);
+    setEditRealisationPreview(null);
+    setEditRealisationError("");
+  }
+
+  async function handleUpdateRealisation(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (!editingRealisation) return;
+    setEditRealisationError("");
+    setEditRealisationSubmitting(true);
+    try {
+      const formData = new FormData(e.currentTarget);
+      const res = await fetch(`/api/admin/realisations/${editingRealisation.id}`, {
+        method: "PATCH",
+        body: formData,
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setEditRealisationError(data.error || "Impossible de modifier cette réalisation.");
+        return;
+      }
+      setRealisations(data.realisations);
+      setEditingRealisation(null);
+      setEditRealisationPreview(null);
+    } catch {
+      setEditRealisationError("Une erreur réseau est survenue. Réessayez.");
+    } finally {
+      setEditRealisationSubmitting(false);
     }
   }
 
@@ -530,6 +566,13 @@ export default function AdminDashboard({
                   </div>
                 </div>
                 <button
+                  onClick={() => openEditRealisation(r)}
+                  aria-label="Modifier"
+                  className="shrink-0 rounded-full p-2.5 text-ink/60 hover:bg-black/5"
+                >
+                  <Pencil size={17} />
+                </button>
+                <button
                   onClick={() => handleDeleteRealisation(r.id)}
                   aria-label="Supprimer"
                   className="shrink-0 rounded-full p-2.5 text-red-600 hover:bg-red-50"
@@ -541,6 +584,127 @@ export default function AdminDashboard({
           </div>
         )}
       </div>
+
+      {/* Edit realisation modal */}
+      {editingRealisation && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+          <form
+            onSubmit={handleUpdateRealisation}
+            encType="multipart/form-data"
+            className="grid max-h-[90vh] w-full max-w-lg gap-4 overflow-y-auto rounded-[20px] bg-white p-6"
+          >
+            <div className="flex items-center justify-between">
+              <h2 className="font-syne text-lg font-bold">
+                Modifier « {editingRealisation.product} »
+              </h2>
+              <button
+                type="button"
+                onClick={() => setEditingRealisation(null)}
+                aria-label="Fermer"
+                className="rounded-full p-1.5 hover:bg-black/5"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <div>
+              <label className="block font-inter text-xs font-medium uppercase tracking-wide text-ink/60">
+                Nom du modèle
+              </label>
+              <input
+                name="product"
+                defaultValue={editingRealisation.product}
+                className="mt-1.5 w-full rounded-xl border border-black/15 px-3 py-2.5 font-inter text-sm focus:outline-none focus:ring-2 focus:ring-gold/60"
+              />
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block font-inter text-xs font-medium uppercase tracking-wide text-ink/60">
+                  Client / ville
+                </label>
+                <input
+                  name="client"
+                  defaultValue={editingRealisation.client}
+                  className="mt-1.5 w-full rounded-xl border border-black/15 px-3 py-2.5 font-inter text-sm focus:outline-none focus:ring-2 focus:ring-gold/60"
+                />
+              </div>
+              <div>
+                <label className="block font-inter text-xs font-medium uppercase tracking-wide text-ink/60">
+                  Catégorie
+                </label>
+                <select
+                  name="cat"
+                  defaultValue={editingRealisation.cat}
+                  className="mt-1.5 w-full rounded-xl border border-black/15 bg-white px-3 py-2.5 font-inter text-sm focus:outline-none focus:ring-2 focus:ring-gold/60"
+                >
+                  {productCats.map(([id, label]) => (
+                    <option key={id} value={id}>
+                      {label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label className="block font-inter text-xs font-medium uppercase tracking-wide text-ink/60">
+                Photo (laissez vide pour garder l&apos;actuelle)
+              </label>
+              <div className="mt-1.5 flex items-center gap-4">
+                <label className="flex cursor-pointer items-center gap-2 rounded-full border border-dashed border-black/25 bg-cream2 px-4 py-2.5 font-inter text-sm hover:border-black/40">
+                  <UploadCloud size={16} />
+                  Remplacer la photo
+                  <input
+                    type="file"
+                    name="image"
+                    accept="image/png,image/jpeg,image/webp,image/gif"
+                    className="hidden"
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      setEditRealisationPreview(f ? URL.createObjectURL(f) : null);
+                    }}
+                  />
+                </label>
+                <div className="relative h-14 w-14 overflow-hidden rounded-xl border border-black/10">
+                  {editRealisationPreview ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={editRealisationPreview} alt="Aperçu" className="h-full w-full object-cover" />
+                  ) : (
+                    <Image
+                      src={editingRealisation.image}
+                      alt={editingRealisation.product}
+                      fill
+                      className="object-cover"
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {editRealisationError && (
+              <p className="font-inter text-sm text-red-600">{editRealisationError}</p>
+            )}
+
+            <div className="flex items-center gap-3">
+              <button
+                type="submit"
+                disabled={editRealisationSubmitting}
+                className="rounded-full bg-ink px-6 py-3 font-inter text-sm font-semibold text-cream transition-opacity hover:opacity-90 disabled:opacity-60"
+              >
+                {editRealisationSubmitting ? "Enregistrement..." : "Enregistrer"}
+              </button>
+              <button
+                type="button"
+                onClick={() => setEditingRealisation(null)}
+                className="rounded-full border border-black/15 px-6 py-3 font-inter text-sm font-medium hover:bg-black/5"
+              >
+                Annuler
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
 
       {/* Edit product modal */}
       {editingProduct && (
@@ -764,7 +928,7 @@ export default function AdminDashboard({
                     ))}
                   </div>
                   <p className="mt-1 font-inter text-xs italic text-ink/60">
-                    “{r.comment}”
+                    "{r.comment}"
                   </p>
                 </div>
 
@@ -859,7 +1023,7 @@ export default function AdminDashboard({
                       className="mt-1 font-inter text-xs text-ink/70"
                       style={{ fontFamily: r.selectedFont || undefined, color: r.textColor || undefined }}
                     >
-                      ✍️ “{r.customText}” — {r.textPosition} — {r.textSize ?? 100}%
+                      ✍️ "{r.customText}" — {r.textPosition} — {r.textSize ?? 100}%
                     </p>
                   )}
                   {r.uploadedPhotos && r.uploadedPhotos.length > 0 ? (
@@ -877,7 +1041,7 @@ export default function AdminDashboard({
                   )}
                   {r.note && (
                     <p className="mt-1 font-inter text-xs italic text-ink/60">
-                      “{r.note}”
+                      "{r.note}"
                     </p>
                   )}
                 </div>

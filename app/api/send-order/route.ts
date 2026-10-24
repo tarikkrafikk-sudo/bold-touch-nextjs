@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
-const ORDER_EMAIL = "tarikk.rafikk@gmail.com";
+const ORDER_EMAIL = "rafikk.tarikk@gmail.com";
 
 interface OrderPhoto {
   id?: string;

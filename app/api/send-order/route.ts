@@ -290,6 +290,13 @@ export async function POST(req: NextRequest) {
     `;
   }
 
+  // Debug log so we can confirm in Vercel's Runtime Logs exactly which
+  // address this deployment is actually using, and whether it came from
+  // the OWNER_EMAIL env var or the hardcoded fallback.
+  console.log(
+    `[send-order] OWNER_EMAIL env var = "${process.env.OWNER_EMAIL ?? "(not set)"}" — sending to: ${ORDER_EMAIL}`
+  );
+
   try {
     const { Resend } = await import("resend");
     const resend = new Resend(apiKey);

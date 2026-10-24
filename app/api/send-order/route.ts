@@ -301,7 +301,7 @@ export async function POST(req: NextRequest) {
     const { Resend } = await import("resend");
     const resend = new Resend(apiKey);
     const result = await resend.emails.send({
-      from: "Bold Touch <onboarding@resend.dev>",
+      from: "Bold Touch <commandes@bold-touch.com>",
       to: ORDER_EMAIL,
       subject,
       html,

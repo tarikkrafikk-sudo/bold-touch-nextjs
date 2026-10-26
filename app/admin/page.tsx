@@ -14,6 +14,7 @@ export const dynamic = "force-dynamic";
 export default async function AdminPage() {
   const authed = isAdminAuthed();
   const initialRequests = authed ? await getRequests() : [];
+  const initialReviews = authed ? await getReviews() : [];
 
   return (
     <>
@@ -25,7 +26,7 @@ export default async function AdminPage() {
             initialProducts={getProducts()}
             initialRealisations={getRealisations()}
             initialRequests={initialRequests}
-            initialReviews={getReviews()}
+            initialReviews={initialReviews}
           />
         ) : (
           <AdminLogin />

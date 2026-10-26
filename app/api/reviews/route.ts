@@ -21,6 +21,13 @@ export async function POST(req: NextRequest) {
   const productName = body.productName ? String(body.productName).slice(0, 120) : null;
   const ratingRaw = Number(body.rating);
   const rating = Number.isFinite(ratingRaw) ? Math.min(5, Math.max(1, Math.round(ratingRaw))) : 5;
+  // Photos are uploaded beforehand via /api/upload (subfolder "reviews"),
+  // which returns real https://...blob.vercel-storage.com/... URLs — only
+  // those are accepted here, capped at 5 per review.
+  const photosRaw = Array.isArray(body.photos) ? body.photos : [];
+  const photos = photosRaw
+    .filter((p): p is string => typeof p === "string" && p.startsWith("https://"))
+    .slice(0, 5);
 
   if (!name || !comment) {
     return NextResponse.json(
@@ -35,6 +42,7 @@ export async function POST(req: NextRequest) {
     rating,
     comment,
     productName,
+    photos: photos.length > 0 ? photos : undefined,
     status: "pending" as const,
     createdAt: new Date().toISOString(),
   };

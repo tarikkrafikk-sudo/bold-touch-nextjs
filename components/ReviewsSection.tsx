@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Star, X } from "lucide-react";
+import { Star, X, Camera, Loader2 } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
 
 interface Review {
@@ -11,9 +11,12 @@ interface Review {
   rating: number;
   comment: string;
   productName: string | null;
+  photos?: string[];
   status: "pending" | "approved" | "rejected";
   createdAt: string;
 }
+
+const MAX_REVIEW_PHOTOS = 5;
 
 export default function ReviewsSection() {
   const { t } = useLanguage();
@@ -25,6 +28,9 @@ export default function ReviewsSection() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [sent, setSent] = useState(false);
+  const [photos, setPhotos] = useState<{ url: string; preview: string }[]>([]);
+  const [uploadingPhoto, setUploadingPhoto] = useState(false);
+  const photoInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     fetch("/api/reviews")
@@ -32,6 +38,41 @@ export default function ReviewsSection() {
       .then((data) => setReviews(data.reviews || []))
       .catch(() => setReviews([]));
   }, []);
+
+  async function handlePhotoSelect(e: React.ChangeEvent<HTMLInputElement>) {
+    const files = Array.from(e.target.files ?? []);
+    e.target.value = ""; // allow picking the same file again later
+    if (files.length === 0) return;
+
+    const room = MAX_REVIEW_PHOTOS - photos.length;
+    const toUpload = files.slice(0, Math.max(0, room));
+    if (toUpload.length === 0) return;
+
+    setUploadingPhoto(true);
+    setError("");
+    for (const file of toUpload) {
+      const preview = URL.createObjectURL(file);
+      try {
+        const formData = new FormData();
+        formData.append("photo", file);
+        formData.append("subfolder", "reviews");
+        const res = await fetch("/api/upload", { method: "POST", body: formData });
+        const data = await res.json();
+        if (!res.ok || !data.url) {
+          setError(data.error || "Envoi de la photo impossible.");
+          continue;
+        }
+        setPhotos((prev) => [...prev, { url: data.url, preview }]);
+      } catch {
+        setError("Envoi de la photo impossible.");
+      }
+    }
+    setUploadingPhoto(false);
+  }
+
+  function removePhoto(url: string) {
+    setPhotos((prev) => prev.filter((p) => p.url !== url));
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -42,7 +83,7 @@ export default function ReviewsSection() {
       const res = await fetch("/api/reviews", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, rating, comment }),
+        body: JSON.stringify({ name, rating, comment, photos: photos.map((p) => p.url) }),
       });
       const data = await res.json();
       if (!res.ok) {
@@ -53,6 +94,7 @@ export default function ReviewsSection() {
       setName("");
       setComment("");
       setRating(5);
+      setPhotos([]);
       setTimeout(() => {
         setShowForm(false);
         setSent(false);
@@ -154,6 +196,48 @@ export default function ReviewsSection() {
                   className="mt-2 w-full rounded-xl border border-black/15 bg-white px-4 py-3 font-inter text-sm focus:outline-none focus:ring-2 focus:ring-gold/60"
                 />
               </div>
+
+              <div>
+                <label className="font-inter text-xs font-semibold uppercase tracking-wide text-ink/60">
+                  {t("reviews.photos")}
+                </label>
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  {photos.map((p) => (
+                    <div key={p.url} className="relative h-16 w-16 overflow-hidden rounded-xl border border-black/10">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={p.preview} alt="" className="h-full w-full object-cover" />
+                      <button
+                        type="button"
+                        onClick={() => removePhoto(p.url)}
+                        aria-label={t("reviews.removePhoto")}
+                        className="absolute right-0.5 top-0.5 rounded-full bg-black/60 p-0.5 text-white hover:bg-black/80"
+                      >
+                        <X size={12} />
+                      </button>
+                    </div>
+                  ))}
+                  {photos.length < MAX_REVIEW_PHOTOS && (
+                    <button
+                      type="button"
+                      onClick={() => photoInputRef.current?.click()}
+                      disabled={uploadingPhoto}
+                      className="flex h-16 w-16 flex-col items-center justify-center gap-1 rounded-xl border border-dashed border-black/25 text-ink/50 hover:border-black/40 disabled:opacity-60"
+                    >
+                      {uploadingPhoto ? <Loader2 size={18} className="animate-spin" /> : <Camera size={18} />}
+                      <span className="font-inter text-[10px]">{photos.length}/{MAX_REVIEW_PHOTOS}</span>
+                    </button>
+                  )}
+                  <input
+                    ref={photoInputRef}
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp,image/gif"
+                    multiple
+                    className="hidden"
+                    onChange={handlePhotoSelect}
+                  />
+                </div>
+              </div>
+
               {error && <p className="font-inter text-xs text-red-600">{error}</p>}
               <button
                 type="submit"
@@ -192,6 +276,22 @@ export default function ReviewsSection() {
             <p className="mt-3 font-inter text-sm leading-relaxed text-ink/80">
               &ldquo;{r.comment}&rdquo;
             </p>
+            {r.photos && r.photos.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {r.photos.map((url, idx) => (
+                  <a
+                    key={url}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative block h-14 w-14 overflow-hidden rounded-lg border border-black/10"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={url} alt={`Photo client ${idx + 1}`} className="h-full w-full object-cover" />
+                  </a>
+                ))}
+              </div>
+            )}
             <p className="mt-4 font-syne text-sm font-bold text-ink">{r.name}</p>
             {r.productName && (
               <p className="font-inter text-xs text-ink/50">{r.productName}</p>

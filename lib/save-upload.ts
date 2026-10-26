@@ -12,7 +12,7 @@ const MAX_SIZE = 5 * 1024 * 1024; // 5MB
 // .env.example for how to get one.
 export async function saveUploadedImage(
   file: File,
-  subfolder: "products" | "customers" | "realisations"
+  subfolder: "products" | "customers" | "realisations" | "reviews"
 ): Promise<{ url: string } | { error: string }> {
   if (!ALLOWED_TYPES.includes(file.type)) {
     return { error: "Format non supporté. Utilisez JPG, PNG, WEBP ou GIF." };

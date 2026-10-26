@@ -18,7 +18,7 @@ export async function PATCH(
   if (body.status !== "approved" && body.status !== "rejected") {
     return NextResponse.json({ error: "Statut invalide." }, { status: 400 });
   }
-  const reviews = setReviewStatus(params.id, body.status);
+  const reviews = await setReviewStatus(params.id, body.status);
   return NextResponse.json({ reviews });
 }
 
@@ -29,6 +29,6 @@ export async function DELETE(
   if (!isAdminAuthed()) {
     return NextResponse.json({ error: "Non autorisé." }, { status: 401 });
   }
-  const reviews = deleteReview(params.id);
+  const reviews = await deleteReview(params.id);
   return NextResponse.json({ reviews });
 }

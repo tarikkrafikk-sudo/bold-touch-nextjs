@@ -6,5 +6,5 @@ export async function GET() {
   if (!isAdminAuthed()) {
     return NextResponse.json({ error: "Non autorisé." }, { status: 401 });
   }
-  return NextResponse.json({ reviews: getReviews() });
+  return NextResponse.json({ reviews: await getReviews() });
 }

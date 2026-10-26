@@ -10,6 +10,7 @@ export interface Review {
   rating: number;
   comment: string;
   productName: string | null;
+  photos?: string[];
   status: ReviewStatus;
   createdAt: string;
 }

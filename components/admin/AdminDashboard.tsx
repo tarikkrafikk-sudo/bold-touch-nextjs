@@ -928,8 +928,23 @@ export default function AdminDashboard({
                     ))}
                   </div>
                   <p className="mt-1 font-inter text-xs italic text-ink/60">
-                    "{r.comment}"
+                    “{r.comment}”
                   </p>
+                  {r.photos && r.photos.length > 0 && (
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {r.photos.map((url, idx) => (
+                        <a
+                          key={url}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative block h-12 w-12 overflow-hidden rounded-lg border border-black/10"
+                        >
+                          <Image src={url} alt={`Photo client ${idx + 1}`} fill className="object-cover" />
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex shrink-0 items-center gap-1.5">
@@ -1023,7 +1038,7 @@ export default function AdminDashboard({
                       className="mt-1 font-inter text-xs text-ink/70"
                       style={{ fontFamily: r.selectedFont || undefined, color: r.textColor || undefined }}
                     >
-                      ✍️ "{r.customText}" — {r.textPosition} — {r.textSize ?? 100}%
+                      ✍️ “{r.customText}” — {r.textPosition} — {r.textSize ?? 100}%
                     </p>
                   )}
                   {r.uploadedPhotos && r.uploadedPhotos.length > 0 ? (
@@ -1041,7 +1056,7 @@ export default function AdminDashboard({
                   )}
                   {r.note && (
                     <p className="mt-1 font-inter text-xs italic text-ink/60">
-                      "{r.note}"
+                      “{r.note}”
                     </p>
                   )}
                 </div>

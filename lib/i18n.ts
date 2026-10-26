@@ -122,6 +122,8 @@ const fr: Dict = {
   "reviews.pendingThanks": "Merci ! Votre avis sera visible après validation.",
   "reviews.empty": "Soyez le premier à laisser un avis !",
   "reviews.cancel": "Annuler",
+  "reviews.photos": "Photos (optionnel)",
+  "reviews.removePhoto": "Retirer la photo",
   "footer.navigation": "Navigation",
   "footer.followUs": "Suivez-nous",
   "footer.about":
@@ -251,6 +253,8 @@ const en: Dict = {
   "reviews.pendingThanks": "Thank you! Your review will appear once approved.",
   "reviews.empty": "Be the first to leave a review!",
   "reviews.cancel": "Cancel",
+  "reviews.photos": "Photos (optional)",
+  "reviews.removePhoto": "Remove photo",
   "footer.navigation": "Navigation",
   "footer.followUs": "Follow us",
   "footer.about":
@@ -379,6 +383,8 @@ const ar: Dict = {
   "reviews.pendingThanks": "شكراً! سيظهر تقييمك بعد الموافقة عليه.",
   "reviews.empty": "كن أول من يضيف تقييماً!",
   "reviews.cancel": "إلغاء",
+  "reviews.photos": "صور (اختياري)",
+  "reviews.removePhoto": "إزالة الصورة",
   "footer.navigation": "التصفح",
   "footer.followUs": "تابعونا",
   "footer.about":

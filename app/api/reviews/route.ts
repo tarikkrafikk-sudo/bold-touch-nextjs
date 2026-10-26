@@ -3,7 +3,7 @@ import { addReview, getApprovedReviews } from "@/lib/reviews-store";
 
 // Public: list approved reviews for display on the homepage.
 export async function GET() {
-  return NextResponse.json({ reviews: getApprovedReviews() });
+  return NextResponse.json({ reviews: await getApprovedReviews() });
 }
 
 // Public: a customer submits a review. Goes to "pending" until an admin
@@ -39,6 +39,6 @@ export async function POST(req: NextRequest) {
     createdAt: new Date().toISOString(),
   };
 
-  addReview(review);
+  await addReview(review);
   return NextResponse.json({ ok: true });
 }
